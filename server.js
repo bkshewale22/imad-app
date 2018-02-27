@@ -22,7 +22,7 @@ var articalOne ={
 };
 function CreateTemlate(data){
     var title=data.title;
-    var had=data.had;
+    var had=data.hed;
     var date=data.date;
 var htmlTem =`
         <html>
