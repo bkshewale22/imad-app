@@ -16,10 +16,10 @@ app.get('/artical-1',function(req,res){
    res.sendFile(path.join(__dirname, 'ui', 'artical-1.html'));
 });
 app.get('/artical-2',function(req,res){
-   res.send('artical two is req ');
+  res.sendFile(path.join(__dirname, 'ui', 'artical-2.html'));
 });
 app.get('/artical-3',function(req,res){
-   res.send('artical three is req ');
+   res.sendFile(path.join(__dirname, 'ui', 'artical-3.html'));
 });
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
