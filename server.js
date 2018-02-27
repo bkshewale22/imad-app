@@ -24,6 +24,7 @@ function CreateTemlate(data){
     var title=data.title;
     var hed=data.hed;
     var date=data.date;
+    var cont=data.cont;
 var htmlTem =`
         <html>
  <head>
