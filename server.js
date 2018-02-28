@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articals={
-articalOne ={
+'artical-1' :{
     title:'artical one',
     cont:`<p>
             this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
@@ -17,41 +17,29 @@ articalOne ={
         <p>
             this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
         </p>`,
-        hed: 'this first artical',
-        date: 'feb 28,2018'
+    hed: 'this first artical',
+    date: 'feb 28,2018'
     
 },
-articalTwo={
-  title:'artical Two',
+'artical-2': {
+    title:'artical Two',
     cont:`<p>
-            this is my Twoasfa contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
-            </p>
-        <p>
-            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
-        </p>
-        <p>
-            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
-        </p>`,
-        hed: 'this second artical',
-        date: 'feb 29,2018'  
+            this is my second artical page
+            </p>`,
+    hed: 'this second artical',
+    date: 'feb 29,2018'  
     
     },
-articalThree={
+'artical-3':{
     title:'artical Three',
     cont:`<p>
-            this is my Threee contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
+            This is my Third artical
             </p>
-        <p>
-            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
-        </p>
-        <p>
-            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
-        </p>`,
-        hed: 'this Three artical',
-        date: 'feb 30,2018'
+            `,
+    hed: 'this Three artical',
+    date: 'feb 30,2018'
     
 }
-    
 };
 function CreateTemlate(data){
     var title=data.title;
@@ -94,8 +82,9 @@ app.get('/', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-app.get('/artical-1',function(req,res){
-   res.send(CreateTemlate(articalOne));
+app.get('/:articalname',function(req,res){
+    var articalname=req.paramas.articalname;
+   res.send(CreateTemlate(articals[articalname]));
 });
 app.get('/artical-2',function(req,res){
   res.send(CreateTemlate(articalTwo));
