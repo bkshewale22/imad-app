@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articals={
-'artical-one' :{
+'artical-1' :{
     title:'artical one',
     cont:`<p>
             this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
@@ -21,7 +21,7 @@ var articals={
     date: 'feb 28,2018'
     
 },
-'artical-two': {
+'artical-2': {
     title:'artical Two',
     cont:`<p>
             this is my second artical page
@@ -30,7 +30,7 @@ var articals={
     date: 'feb 29,2018'  
     
     },
-'artical-three':{
+'artical-3':{
     title:'artical Three',
     cont:`<p>
             This is my Third artical
