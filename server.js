@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articals={
-'artical-1' :{
+'artical-one' :{
     title:'artical one',
     cont:`<p>
             this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
@@ -21,7 +21,7 @@ var articals={
     date: 'feb 28,2018'
     
 },
-'artical-2': {
+'artical-two': {
     title:'artical Two',
     cont:`<p>
             this is my second artical page
@@ -30,7 +30,7 @@ var articals={
     date: 'feb 29,2018'  
     
     },
-'artical-3':{
+'artical-three':{
     title:'artical Three',
     cont:`<p>
             This is my Third artical
@@ -83,7 +83,7 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 app.get('/:articleName',function(req,res){
-    var articleName=req.paramas.articleName;
+    var articleName=req.paranas.articleName;
    res.send(CreateTemlate(articals[articleName]));
 });
 app.get('/artical-2',function(req,res){
