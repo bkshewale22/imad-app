@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articalOne ={
+var articals={
+articalOne ={
     title:'artical one',
     cont:`<p>
             this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
@@ -18,6 +19,38 @@ var articalOne ={
         </p>`,
         hed: 'this first artical',
         date: 'feb 28,2018'
+    
+},
+articalTwo={
+  title:'artical Two',
+    cont:`<p>
+            this is my Twoasfa contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
+            </p>
+        <p>
+            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
+        </p>
+        <p>
+            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
+        </p>`,
+        hed: 'this second artical',
+        date: 'feb 29,2018'  
+    
+    },
+articalThree={
+    title:'artical Three',
+    cont:`<p>
+            this is my Threee contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
+            </p>
+        <p>
+            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
+        </p>
+        <p>
+            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.
+        </p>`,
+        hed: 'this Three artical',
+        date: 'feb 30,2018'
+    
+}
     
 };
 function CreateTemlate(data){
@@ -65,10 +98,10 @@ app.get('/artical-1',function(req,res){
    res.send(CreateTemlate(articalOne));
 });
 app.get('/artical-2',function(req,res){
-  res.sendFile(path.join(__dirname, 'ui', 'artical-2.html'));
+  res.send(CreateTemlate(articalTwo));
 });
 app.get('/artical-3',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'artical-3.html'));
+   res.send(CreateTemlate(articalThree));
 });
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
