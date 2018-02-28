@@ -1,2 +1,2 @@
-console.log('Loaded!');
-
+//counter code 
+var counter=get
