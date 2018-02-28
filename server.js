@@ -84,7 +84,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 app.get('/:articleName',function(req,res){
     var articleName=req.paramas.articleName;
-   res.send(CreateTemlate(articals[articalname]));
+   res.send(CreateTemlate(articals[articleName]));
 });
 app.get('/artical-2',function(req,res){
   res.send(CreateTemlate(articalTwo));
