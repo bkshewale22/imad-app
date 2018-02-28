@@ -82,8 +82,8 @@ app.get('/', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-app.get('/:articalName',function(req,res){
-    var articalName=req.paramas.articalName;
+app.get('/:articleName',function(req,res){
+    var articleName=req.paramas.articleName;
    res.send(CreateTemlate(articals[articalname]));
 });
 app.get('/artical-2',function(req,res){
