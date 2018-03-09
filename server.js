@@ -14,21 +14,8 @@ var app = express();
 app.use(morgan('combined'));
 
 var articals={	
-'artical-1' :{	
-    title:'artical one',	
-    cont:`<p>	
-            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.	
-            </p>	
-        <p>	
-           this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.	
-        </p>	
-        <p>	
-            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.	
-        </p>`,	
-    hed: 'this first artical',	
-    date: 'feb 28,2018'	
-    	
-},	
+'artical-1' 
+
 'artical-2': {	
     title:'artical Two',	
     cont:`<p>	
@@ -98,7 +85,7 @@ app.get('/test-db',function(req,res){
     
    //make select request
    //and return the respond with the result
-   pool.query('SELECT * FROM Artical_1',function(err,result){
+  /* pool.query('SELECT * FROM Artical_1',function(err,result){
        if(err){
          res.status(500).send(err.toString());
        }else{
@@ -106,7 +93,7 @@ app.get('/test-db',function(req,res){
           }
             
        
-   }); 
+   }); */
     
 });
 app.get('/', function (req, res) {
@@ -121,7 +108,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 app.get('/articals/:Name',function(req,res){
     var Name=req.params.Name;
-    pool.query("SELECT * FROM artical WHERE title ='" + req.params.Name +"'", function(err,result){
+    pool.query("SELECT * FROM artical WHERE title = $1"+ [req.params.Name] , function(err,result){
         
         if(err){
             res.status(500).send(err.toString());
