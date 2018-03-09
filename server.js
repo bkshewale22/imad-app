@@ -15,7 +15,7 @@ app.use(morgan('combined'));
 
 
 function CreateTemlate(data){
-    var title=data.title;
+    var Title=data.Title;
     var Header =data.Header ;
     var date=data.date;
     var Contant=data.Contant;
