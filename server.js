@@ -36,7 +36,7 @@ var htmlTem =`
         ${Header}
     </h3>
     <div>
-        ${date}
+        ${date.toString()}
     </div> 
     <div>
         ${Contant}
