@@ -62,7 +62,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 app.get('/articals/:Name',function(req,res){
     
-    pool.query("SELECT * FROM art WHERE Title = "+res.params.Name , function(err,result){
+    pool.query("SELECT * FROM art WHERE Title ='balaji'" , function(err,result){
         
         if(err){
             res.status(500).send(err.toString());
