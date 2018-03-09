@@ -15,14 +15,14 @@ app.use(morgan('combined'));
 
 
 function CreateTemlate(data){
-    var title=data.title;
-    var hed=data.hed;
+    var Title=data.Title;
+    var Header =data.Header ;
     var date=data.date;
-    var cont=data.cont;
+    var Contant=data.Contant;
 var htmlTem =`
         <html>
  <head>
-    ${title}
+    ${Title}
      <link href="/ui/style.css" rel="stylesheet" />
    
 </head>
@@ -33,13 +33,13 @@ var htmlTem =`
     </div>
     <hr/>
     <h3> 
-        ${hed}
+        ${Header}
     </h3>
     <div>
         ${date}
     </div> 
     <div>
-        ${cont}
+        ${Contant}
     </div>
     </div>
   </body>
