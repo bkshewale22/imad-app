@@ -101,7 +101,7 @@ app.get('/test-dp',function(req,res){
     
    //make select request
    //and return the respond with the result
-  /* pool.query('SELECT * FROM test',function(err,result){
+   pool.query('SELECT * FROM test',function(err,result){
        if(err){
          res.status(500).send(err.toString());
        }else{
@@ -109,7 +109,7 @@ app.get('/test-dp',function(req,res){
           }
             
        
-   }); */
+   }); 
     
 });
 app.get('/', function (req, res) {
