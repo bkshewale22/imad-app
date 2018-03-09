@@ -60,9 +60,9 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-app.get('/shewale/balaji',function(req,res){
+app.get('/articals/Name:',function(req,res){
     
-    pool.query("SELECT * FROM art WHERE title ='balaji'" , function(err,result){
+    pool.query("SELECT * FROM art WHERE title =$1"+[res.params.Name] , function(err,result){
         
         if(err){
             res.status(500).send(err.toString());
