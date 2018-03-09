@@ -49,21 +49,7 @@ var htmlTem =`
 }
 
 var pool = new Pool(config);
-/*app.get('/test-db',function(req,res){
-    
-   //make select request
-   //and return the respond with the result
-   pool.query('SELECT * FROM Artical_1',function(err,result){
-       if(err){
-         res.status(500).send(err.toString());
-       }else{
-           res.send(JSON.stringify(result));
-          }
-            
-       
-   }); */
-    
-});
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -76,7 +62,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 app.get('/articals/:Name',function(req,res){
     
-    pool.query("SELECT * FROM artical WHERE title = $1"+ [req.params.Name] , function(err,result){
+    pool.query("SELECT * FROM Artical_1 WHERE title = $1"+ [req.params.Name] , function(err,result){
         
         if(err){
             res.status(500).send(err.toString());
