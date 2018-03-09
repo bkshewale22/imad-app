@@ -124,7 +124,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 app.get('/:Name',function(req,res){
     var Name=req.params.Name;
-   res.send(CreateTemlate(articals[Name]));
+   res.send(CreateTemlate(articals["artical-1"]));
 });
 
 app.get('/ui/madi.png', function (req, res) {
