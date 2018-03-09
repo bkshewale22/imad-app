@@ -62,7 +62,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 app.get('/articals/:Name',function(req,res){
     
-    pool.query("SELECT * FROM Artical_1 WHERE title = $1"+ [req.params.Name] , function(err,result){
+    pool.query("SELECT * FROM Artical_1 WHERE Title = $1"+ [req.params.Name] , function(err,result){
         
         if(err){
             res.status(500).send(err.toString());
