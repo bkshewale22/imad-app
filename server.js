@@ -8,7 +8,7 @@ var config ={
     database:'bkshewale',
     host:'db.imad.hasura-app.io',
     port:'5432',
-    password:  process.env.DB_PASSWORD
+    password:  db-bkshewale-39390
 };
 
 var path = require('path');
@@ -124,7 +124,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 app.get('/:Name',function(req,res){
     var Name=req.params.Name;
-   res.send(CreateTemlate(articals["artical-1"]));
+   res.send(CreateTemlate(articals["Name"]));
 });
 
 app.get('/ui/madi.png', function (req, res) {
