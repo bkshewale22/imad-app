@@ -64,11 +64,11 @@ app.get('/shewale/balaji',function(req,res){
     
     pool.query("SELECT * FROM art WHERE title ='balaji'" , function(err,result){
         
-        if(err){
+       /* if(err){
             res.status(500).send(err.toString());
         }else if(res.rows.length === 0){
             res.status(404).send('Artical not found');
-        }else {
+        }else*/ {
             var ArticalData = result.rows[0];
             res.send(CreateTemlate(ArticalData));
         }
