@@ -54,10 +54,10 @@ function hash(input,salt){
     var hashed = crypto.pbkdf2Sync('secret', 'salt', 100000, 64, 'sha512');
     return hashed.toString('hax');
 }
-app.get('/hash/:input',function(request,respond){
+app.get('/hash/:input',function(req,res){
    
-   var hashedString = hash(respond.params.input,'this is a ramdom string');
-   respond.send(hashedStrting);
+   var hashedString = hash(res.params.input,'this is a ramdom string');
+   res.send(hashedStrting);
     
 });
 var pool = new Pool(config);
