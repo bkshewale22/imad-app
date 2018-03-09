@@ -8,7 +8,7 @@ var config ={
     database:'bkshewale',
     host:'db.imad.hasura-app.io',
     port:'5432',
-    password:  db-bkshewale-39390
+    password: process.env.DB_PASSWORD
 };
 
 var path = require('path');
