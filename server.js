@@ -13,29 +13,6 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articals={	
-'artical-1' 
-
-'artical-2': {	
-    title:'artical Two',	
-    cont:`<p>	
-            this is my second artical page	
-            </p>`,	
-    hed: 'this second artical',	
-    date: 'feb 29,2018'  	
-	
-    },	
-'artical-3':{	
-    title:'artical Three',	
-    cont:`<p>	
-        This is my Third artical	
-            </p>	
-            `,	
-    hed: 'this Three artical',	
-    date: 'feb 30,2018'	
-    	
-}	
-};
 
 function CreateTemlate(data){
     var title=data.title;
@@ -70,22 +47,13 @@ var htmlTem =`
 `;
   return htmlTem;  
 }
-var counter=0;
-app.get('/counter',function(req,res){
-    
-    counter =counter + 1;
-    res.send(counter.toString());
-    
-    
-});
-
 
 var pool = new Pool(config);
-app.get('/test-db',function(req,res){
+/*app.get('/test-db',function(req,res){
     
    //make select request
    //and return the respond with the result
-  /* pool.query('SELECT * FROM Artical_1',function(err,result){
+   pool.query('SELECT * FROM Artical_1',function(err,result){
        if(err){
          res.status(500).send(err.toString());
        }else{
@@ -107,12 +75,12 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 app.get('/articals/:Name',function(req,res){
-    var Name=req.params.Name;
+    
     pool.query("SELECT * FROM artical WHERE title = $1"+ [req.params.Name] , function(err,result){
         
         if(err){
             res.status(500).send(err.toString());
-        }else if(res.rows.length ===0){
+        }else if(res.rows.length === 0){
             res.status(404).send('Artical not found');
         }else{
             var ArticalData = result.rows[0];
