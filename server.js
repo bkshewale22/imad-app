@@ -1,6 +1,6 @@
-var express = require('express');
+var express= require('express');
 var morgan = require('morgan');
-var Pool =require('pg').Pool;
+var Pool   = require('pg').Pool;
 
 var config ={
     
@@ -93,7 +93,9 @@ app.get('/counter',function(req,res){
     
     
 });
-var pool =new Pool(config);
+
+
+var pool = new Pool(config);
 app.get('/test-dp',function(req,res){
     
    //make select request
@@ -103,9 +105,8 @@ app.get('/test-dp',function(req,res){
        res.status(500).send(err.toString());
        }else{
            res.send(JSON.stringify(result));
-           
-       }
-       
+          }
+            
        
    }); 
     
