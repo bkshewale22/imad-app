@@ -98,7 +98,7 @@ app.get('/test-db',function(req,res){
     
    //make select request
    //and return the respond with the result
-   pool.query('SELECT * FROM artical_1',function(err,result){
+   pool.query('SELECT * FROM Artical_1',function(err,result){
        if(err){
          res.status(500).send(err.toString());
        }else{
@@ -119,9 +119,22 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-app.get('/:Name',function(req,res){
+app.get('/articals/:Name',function(req,res){
     var Name=req.params.Name;
-   res.send(CreateTemlate(articals["Name"]));
+    pool.query("SELECT * FROM artical WHERE title ='" + req.params.Name +"'", function(err,result){
+        
+        if(err){
+            res.status(500).send(err.toString());
+        }else if(res.rows.length ===0){
+            res.status(404).send('Artical not found');
+        }else{
+            var ArticalData = result.rows[0];
+            res.send(CreateTemlate(ArticalData));
+        }
+        
+        
+    });
+   
 });
 
 app.get('/ui/madi.png', function (req, res) {
