@@ -16,6 +16,43 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articals={	
+'artical-1' :{	
+    title:'artical one',	
+    cont:`<p>	
+            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.	
+            </p>	
+        <p>	
+           this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.	
+        </p>	
+        <p>	
+            this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.this is my first contant of web app.	
+        </p>`,	
+    hed: 'this first artical',	
+    date: 'feb 28,2018'	
+    	
+},	
+'artical-2': {	
+    title:'artical Two',	
+    cont:`<p>	
+            this is my second artical page	
+            </p>`,	
+    hed: 'this second artical',	
+    date: 'feb 29,2018'  	
+	
+    },	
+'artical-3':{	
+    title:'artical Three',	
+    cont:`<p>	
+        This is my Third artical	
+            </p>	
+            `,	
+    hed: 'this Three artical',	
+    date: 'feb 30,2018'	
+    	
+}	
+};
+
 function CreateTemlate(data){
     var title=data.title;
     var hed=data.hed;
