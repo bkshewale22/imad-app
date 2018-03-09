@@ -51,7 +51,7 @@ var htmlTem =`
 
 function hash(input,salt){
     
-    var hashed = crypto.pbkdf2Sync('secret', 'salt', 100000, 64, 'sha512');
+    var hashed = crypto.pbkdf2Sync(input,salt, 100000, 64, 'sha512');
     return hashed.toString('hax');
 }
 app.get('/hash/:input',function(req,res){
